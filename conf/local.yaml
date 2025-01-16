@@ -1,0 +1,20 @@
+defaults:
+  - dataset: local
+  - model: ABMIL
+  - settings: config
+  - _self_
+
+hydra:
+  job:
+    chdir: true
+    config:
+      override_dirname:
+        exclude_keys:
+          - seed
+  sweep:
+    dir: multirun
+    subdir: ${model.name}/seed=${seed}
+
+use_cuda: false
+seed: 0
+model_path: ${model.name}_${seed}.pth

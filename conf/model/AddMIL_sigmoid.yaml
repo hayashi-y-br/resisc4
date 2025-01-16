@@ -1,0 +1,3 @@
+name: AddMIL_sigmoid
+num_classes: 4
+activation: sigmoid

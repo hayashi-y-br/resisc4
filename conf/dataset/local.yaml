@@ -1,0 +1,12 @@
+settings:
+  root: ${hydra:runtime.cwd}/data
+  patch_size: 32
+
+train:
+  split: train
+
+valid:
+  split: valid
+
+test:
+  split: test

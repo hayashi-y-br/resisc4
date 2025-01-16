@@ -1,0 +1,20 @@
+defaults:
+  - dataset: config
+  - model: ABMIL
+  - settings: config
+  - _self_
+
+hydra:
+  job:
+    chdir: true
+    config:
+      override_dirname:
+        exclude_keys:
+          - seed
+  sweep:
+    dir: /gs/bs/tga-mdl/hayashi-mdl/RESISC4
+    subdir: ${model.name}/${hydra.job.override_dirname}/seed=${seed}
+
+use_cuda: true
+seed: 0
+model_path: ${model.name}_${seed}.pth

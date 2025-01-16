@@ -1,0 +1,12 @@
+settings:
+  root: /gs/fs/tga-mdl/hayashi-mdl/NWPU-RESISC45
+  patch_size: 32
+
+train:
+  split: train
+
+valid:
+  split: valid
+
+test:
+  split: test
